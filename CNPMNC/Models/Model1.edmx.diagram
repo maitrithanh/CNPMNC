@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3597559c7d044bedafb786338de1fc59" Name="Diagram1">
+        <EntityTypeShape EntityType="CNPMNCModel.CHUCVU" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.CTDH" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.CTGIAOHANG" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.DANHMUC" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.DONHANG" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.FEEDBACK" Width="1.5" PointX="10.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.KHACHHANG" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.KHAOSAT" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.KHUYENMAI" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.LOAIKHACHHANG" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.NHANVIEN" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.SANPHAM" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMNCModel.TAIKHOAN" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="CNPMNCModel.FK_NHANVIEN_CHUCVU" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_CTDH_DONHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_CTDH_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_CTGIAOHANG_DONHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_SANPHAM_DANHMUC" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_DONHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_FEEDBACK_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_FEEDBACK_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_KHACHHANG_LOAIKHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMNCModel.FK_SANPHAM_NHANVIEN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -77,3 +77,7 @@ D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\obj\Debug\CNPMN
 D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\obj\Debug\CNPMNC.csproj.CopyComplete
 D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\obj\Debug\CNPMNC.dll
 D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\obj\Debug\CNPMNC.pdb
+D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\bin\EntityFramework.dll
+D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\bin\EntityFramework.SqlServer.dll
+D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\bin\EntityFramework.xml
+D:\Học Tập\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\CNPMNC\CNPMNC\bin\EntityFramework.SqlServer.xml
