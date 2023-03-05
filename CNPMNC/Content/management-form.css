@@ -1,0 +1,73 @@
+﻿.form-group {
+    background-color: aliceblue;
+    margin: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #000000;
+    border: 1px solid #cdd9ed;
+}
+
+.title-form {
+    color: #fff;
+    font-weight: 600;
+    padding: 16px;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+    /*    background-color: #4285f4;
+*/
+    background-image: url('https://www.slidebackground.com/uploads/technology-background/technology-wallpapers-download-pixelstalk-24.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-name {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-right: 1px solid #cdd9ed;
+}
+
+.input-form {
+    padding: 12px;
+    border: 0;
+    outline: none;
+    border-radius: 0 8px 8px 0;
+}
+
+.form-group:focus-within {
+    color: #fff !important;
+    border: 1px solid #4285f4;
+    background-color: #4285f4;
+}
+
+textarea {
+    min-height: 150px;
+    border: 0;
+    outline: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.box-form {
+    margin: 16px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.img-create {
+    width: 200px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+::-webkit-file-upload-button {
+    background: #198754;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 10px;
+    cursor: pointer;
+}

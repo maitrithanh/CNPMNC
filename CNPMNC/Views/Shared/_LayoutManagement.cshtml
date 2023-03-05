@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/ManagementLayout.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/globalStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+<body>
+    <div class="p-0 m-0">
+        <div class="nav-left bg-dark" style=" position: fixed;">
+            <ul class="list-menu">
+                <li class="@(ViewBag.Current == "QuanLySanPham" ? "active" : "")">
+                    <a href="@Url.Action("ProductsManagement", "Management")">
+                        <i class="fa-solid fa-boxes-stacked"></i> Quản Lý Sản Phẩm
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa-solid fa-box"></i> Quản Lý Đơn Hàng</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-right">
+            <div class="nav-content mb-3">
+                <div class="nav">
+                    @ViewBag.Title
+                </div>
+            </div>
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

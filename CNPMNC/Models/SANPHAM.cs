@@ -11,7 +11,10 @@ namespace CNPMNC.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class SANPHAM
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,17 +27,20 @@ namespace CNPMNC.Models
         public int IDSP { get; set; }
         public string TENSP { get; set; }
         public Nullable<int> SOLUONG { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:c}")]
         public Nullable<decimal> DONGIA { get; set; }
         public string MOTA { get; set; }
         public string HINHSP { get; set; }
         public Nullable<int> IDDANHMUC { get; set; }
         public Nullable<int> IDNV { get; set; }
-    
+        [NotMapped]
+        public HttpPostedFileBase UploadImage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDH> CTDHs { get; set; }
         public virtual DANHMUC DANHMUC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FEEDBACK> FEEDBACKs { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
+        
     }
 }
