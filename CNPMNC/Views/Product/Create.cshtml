@@ -8,6 +8,11 @@
 <link href="~/Content/management-form.css" rel="stylesheet" />
 <script src="~/Scripts/main.js" language="JavaScript" type="text/javascript"></script>
 
+<script>
+    if (@ViewBag.Error) {
+        alert(@ViewBag.Error);
+    }
+</script>
 <div class="box-form">
     @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {

@@ -40,8 +40,9 @@ namespace CNPMNC.Controllers
                 database.SaveChanges();
                 return Redirect("/Management/ProductsManagement");
             }
-            catch
+            catch(Exception e)
             {
+                ViewBag.Error = e.ToString();
                 return View();
             }
         }
