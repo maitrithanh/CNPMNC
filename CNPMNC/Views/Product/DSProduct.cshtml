@@ -1,0 +1,142 @@
+﻿@model IEnumerable<CNPMNC.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "DSProduct";
+    Layout = "~/Views/Shared/_LayoutManagement.cshtml";
+}
+<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="~/Content/css/product.css" />
+
+
+<div class="row listproduct">
+    <div class="col-2">
+        dsfsfsfsf
+    </div>
+    <div class="col-10">
+        <div class="menusmal">
+            <p style="color: gray;"><a href="#" style="color: black; text-decoration: none;">Home</a>/ Product</p>
+        </div>
+        <!-- Swiper -->
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                @foreach (var hinh in Model)
+                {
+                    <div class="swiper-slide">
+                        <img src="@Url.Content(hinh.HINHSP)" alt="@Html.DisplayFor(modelItem => hinh.TENSP)" />
+                    </div>
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Swiper JS -->
+        <div id="btnContainer" class="row">
+            <div class="col-4">
+                <button class="btn active1" onclick="listView()">
+                    <i class="fa fa-bars"></i> List
+                </button>
+                <button class="btn" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+            </div>
+            <div class="col-8">
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group form-check-inline" >
+                       @Html.TextBox("SearchString","", new { @class="form-control"})
+                        <input type="submit" class="btn btn-default" value="Search" />
+
+                    </div>
+
+                }
+
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                  <div class="column" style="margin-bottom:25px;">
+                       <div class="photo">
+                           <a href="@Url.Action("", "")">
+                               <img src="@Url.Content(item.HINHSP)" alt="@Html.DisplayFor(modelItem => item.TENSP)" style="height:200px; width:200px" />
+                           </a>
+                       </div>
+                       <div class="infomation">
+                           <span style="font-weight:700;font-size:20px;">@Html.DisplayFor(modelItem => item.TENSP)</span><br />
+                           <div class="ke"></div>
+                           <p class="mota">@Html.DisplayFor(modelItem => item.MOTA)</p>
+                           <p class="Dongia">@Html.DisplayFor(modelItem => item.DONGIA)</p>
+                           <button class="mua">Đặt hàng</button>
+                       </div>
+                  </div>
+
+                }
+        </div>
+    </div>
+</div>
+
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+<script>
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
+
+    // Declare a loop variable
+    var i;
+
+    // List View
+    function listView() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.width = "100%";
+        }
+    }
+
+    // Grid View
+    function gridView() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.width = "50%";
+        }
+    }
+
+    /* Optional: Add active class to the current button (highlight it) */
+    var container = document.getElementById("btnContainer");
+    var btns = container.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active1");
+            current[0].className = current[0].className.replace(" active1", "");
+            this.className += " active1";
+        });
+    }
+</script>
+

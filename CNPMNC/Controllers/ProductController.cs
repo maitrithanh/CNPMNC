@@ -46,5 +46,19 @@ namespace CNPMNC.Controllers
                 return View();
             }
         }
+        public ActionResult DSProduct(string SearchString ="")
+        {
+            if (SearchString !="")
+            {
+                var list = database.SANPHAMs.OrderByDescending(s => s.DANHMUC).Where(x => x.TENSP.ToUpper().Contains(SearchString.ToUpper()));
+                return View(list.ToList());
+            }
+            else
+            {
+                var listProducts = database.SANPHAMs.OrderByDescending(sp => sp.TENSP).ToList();
+                return View(listProducts);
+            }
+        }
+
     }
 }
