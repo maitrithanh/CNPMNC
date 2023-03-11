@@ -28,7 +28,7 @@ namespace CNPMNC.Models
         public string SDT { get; set; }
         public string DIACHI { get; set; }
         public string AVATARKH { get; set; }
-        public Nullable<int> IDLKH { get; set; }
+        public string IDLKH { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONHANG> DONHANGs { get; set; }

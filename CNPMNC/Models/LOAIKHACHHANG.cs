@@ -20,7 +20,8 @@ namespace CNPMNC.Models
             this.KHACHHANGs = new HashSet<KHACHHANG>();
         }
     
-        public int IDLKH { get; set; }
+        public int ID { get; set; }
+        public string IDLKH { get; set; }
         public string TENLOAI { get; set; }
         public Nullable<double> UUDAI { get; set; }
     

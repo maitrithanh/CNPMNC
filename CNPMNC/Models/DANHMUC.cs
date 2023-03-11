@@ -20,7 +20,8 @@ namespace CNPMNC.Models
             this.SANPHAMs = new HashSet<SANPHAM>();
         }
     
-        public int IDDANHMUC { get; set; }
+        public int ID { get; set; }
+        public string IDDANHMUC { get; set; }
         public string TENDANHMUC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

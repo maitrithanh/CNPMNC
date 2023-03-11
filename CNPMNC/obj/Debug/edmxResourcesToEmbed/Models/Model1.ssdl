@@ -4,7 +4,8 @@
     <Key>
       <PropertyRef Name="IDCV" />
     </Key>
-    <Property Name="IDCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDCV" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="TENCV" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="CTDH">
@@ -30,7 +31,8 @@
     <Key>
       <PropertyRef Name="IDDANHMUC" />
     </Key>
-    <Property Name="IDDANHMUC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDDANHMUC" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="TENDANHMUC" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DONHANG">
@@ -62,13 +64,13 @@
       <PropertyRef Name="IDKH" />
     </Key>
     <Property Name="IDKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MAKH" Type="varchar" MaxLength="10" />
+    <Property Name="MAKH" Type="nchar" MaxLength="20" />
     <Property Name="HOTENKH" Type="nvarchar" MaxLength="50" />
     <Property Name="EMAIL" Type="varchar" MaxLength="150" />
     <Property Name="SDT" Type="char" MaxLength="10" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
     <Property Name="AVATARKH" Type="nvarchar(max)" />
-    <Property Name="IDLKH" Type="int" />
+    <Property Name="IDLKH" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="KHAOSAT">
     <Key>
@@ -93,7 +95,8 @@
     <Key>
       <PropertyRef Name="IDLKH" />
     </Key>
-    <Property Name="IDLKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDLKH" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" />
     <Property Name="UUDAI" Type="float" />
   </EntityType>
@@ -101,14 +104,14 @@
     <Key>
       <PropertyRef Name="IDNV" />
     </Key>
-    <Property Name="IDNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="MANV" Type="varchar(max)" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDNV" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="HOTENNV" Type="nvarchar" MaxLength="50" />
     <Property Name="EMAIL" Type="varchar" MaxLength="150" />
     <Property Name="DIACHI" Type="nvarchar(max)" />
     <Property Name="SDT" Type="char" MaxLength="10" />
     <Property Name="AVATARNV" Type="nvarchar(max)" />
-    <Property Name="IDCV" Type="int" />
+    <Property Name="IDCV" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
@@ -120,18 +123,8 @@
     <Property Name="DONGIA" Type="money" />
     <Property Name="MOTA" Type="ntext" />
     <Property Name="HINHSP" Type="nvarchar(max)" />
-    <Property Name="IDDANHMUC" Type="int" />
-    <Property Name="IDNV" Type="int" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="IDDANHMUC" Type="nchar" MaxLength="20" />
+    <Property Name="IDNV" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="TAIKHOAN">
     <Key>
@@ -142,7 +135,7 @@
     <Property Name="MATKHAU" Type="nvarchar(max)" Nullable="false" />
     <Property Name="VAITRO" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK_CTDH_DONHANG">
+  <Association Name="FK__CTDH__IDDH__4AB81AF0">
     <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
     <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
     <ReferentialConstraint>
@@ -154,7 +147,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CTDH_SANPHAM">
+  <Association Name="FK__CTDH__IDSP__4BAC3F29">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
     <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
     <ReferentialConstraint>
@@ -163,6 +156,18 @@
       </Principal>
       <Dependent Role="CTDH">
         <PropertyRef Name="IDSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DONHANG__IDKH__47DBAE45">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IDKH" />
+      </Principal>
+      <Dependent Role="DONHANG">
+        <PropertyRef Name="IDKH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -175,18 +180,6 @@
       </Principal>
       <Dependent Role="CTGIAOHANG">
         <PropertyRef Name="IDDH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_DONHANG_KHACHHANG">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
-    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="IDKH" />
-      </Principal>
-      <Dependent Role="DONHANG">
-        <PropertyRef Name="IDKH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -275,23 +268,22 @@
     <EntitySet Name="LOAIKHACHHANG" EntityType="Self.LOAIKHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_CTDH_DONHANG" Association="Self.FK_CTDH_DONHANG">
+    <AssociationSet Name="FK__CTDH__IDDH__4AB81AF0" Association="Self.FK__CTDH__IDDH__4AB81AF0">
       <End Role="DONHANG" EntitySet="DONHANG" />
       <End Role="CTDH" EntitySet="CTDH" />
     </AssociationSet>
-    <AssociationSet Name="FK_CTDH_SANPHAM" Association="Self.FK_CTDH_SANPHAM">
+    <AssociationSet Name="FK__CTDH__IDSP__4BAC3F29" Association="Self.FK__CTDH__IDSP__4BAC3F29">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CTDH" EntitySet="CTDH" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DONHANG__IDKH__47DBAE45" Association="Self.FK__DONHANG__IDKH__47DBAE45">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DONHANG" EntitySet="DONHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_CTGIAOHANG_DONHANG" Association="Self.FK_CTGIAOHANG_DONHANG">
       <End Role="DONHANG" EntitySet="DONHANG" />
       <End Role="CTGIAOHANG" EntitySet="CTGIAOHANG" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DONHANG_KHACHHANG" Association="Self.FK_DONHANG_KHACHHANG">
-      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-      <End Role="DONHANG" EntitySet="DONHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_FEEDBACK_KHACHHANG" Association="Self.FK_FEEDBACK_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />

@@ -20,14 +20,14 @@ namespace CNPMNC.Models
             this.SANPHAMs = new HashSet<SANPHAM>();
         }
     
-        public int IDNV { get; set; }
-        public string MANV { get; set; }
+        public int ID { get; set; }
+        public string IDNV { get; set; }
         public string HOTENNV { get; set; }
         public string EMAIL { get; set; }
         public string DIACHI { get; set; }
         public string SDT { get; set; }
         public string AVATARNV { get; set; }
-        public Nullable<int> IDCV { get; set; }
+        public string IDCV { get; set; }
     
         public virtual CHUCVU CHUCVU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

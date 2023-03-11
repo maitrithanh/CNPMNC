@@ -14,7 +14,7 @@
     }
 </script>
 <div class="box-form">
-    @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { @enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
@@ -57,13 +57,13 @@
 
             <div class="form-group row p-0">
                 <span class="col label-name">Danh Mục</span>
-                @Html.EditorFor(model => model.IDDANHMUC, new { htmlAttributes = new { @class = "input-form col-10" } })
+                @Html.DropDownList("IDDANHMUC", null, htmlAttributes: new { @class = "input-form col-10" })
                 @Html.ValidationMessageFor(model => model.IDDANHMUC, "", new { @class = "text-danger" })
             </div>
 
             <div class="form-group row p-0">
                 <span class="col label-name">ID Nhân Viên</span>
-                @Html.EditorFor(model => model.IDNV, new { htmlAttributes = new { @class = "input-form col-10" } })
+                @Html.DropDownList("NhanVien", null, htmlAttributes: new { @class = "input-form col-10"})
                 @Html.ValidationMessageFor(model => model.IDNV, "", new { @class = "text-danger" })
             </div>
 

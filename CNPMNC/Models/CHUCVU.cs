@@ -20,7 +20,8 @@ namespace CNPMNC.Models
             this.NHANVIENs = new HashSet<NHANVIEN>();
         }
     
-        public int IDCV { get; set; }
+        public int ID { get; set; }
+        public string IDCV { get; set; }
         public string TENCV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
